@@ -16,6 +16,10 @@ def compute_similarities(f_adj, g_adj, sim_matrix, add_self_loops=True, decay=0.
         np.fill_diagonal(f_adj, 1)
         np.fill_diagonal(g_adj, 1)
     
+    # make sure the graphs are undirected
+    f_adj = np.clip(f_adj + f_adj.T, 0, 1)
+    g_adj = np.clip(g_adj + g_adj.T, 0, 1)
+
     f_adj_normed = _col_norm(f_adj).T
     g_adj_normed = _col_norm(g_adj)
 

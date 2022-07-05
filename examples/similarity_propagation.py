@@ -1,7 +1,7 @@
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
-from simrank_sims import compute_similarities
+from simrank_cmp import compute_similarities
 
 # Create a random graph
 g = nx.grid_2d_graph(15, 15)

@@ -3,7 +3,7 @@ import random
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
-from simrank_sims import compute_similarities
+from simrank_cmp import compute_similarities
 
 def calculate_pairing(sims):
     """
