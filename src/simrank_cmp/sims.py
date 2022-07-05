@@ -1,6 +1,6 @@
 import numpy as np
 
-def _col_norm_eigh(S):
+def col_norm_eigh(S):
     """
     Calculate the eigenvalues, eigenvectors, and inverse eigenvectors of a column-normalized matrix, pre-normalization.
     :param S: A symmetric matrix, pre-normalization.
@@ -34,12 +34,11 @@ def compute_similarities(f_adj, g_adj, sim_matrix, add_self_loops=True, decay=0.
     f_adj = np.clip(f_adj + f_adj.T, 0, 1)
     g_adj = np.clip(g_adj + g_adj.T, 0, 1)
 
-    f_eigs, f_vecs, f_vecs_inv = _col_norm_eigh(f_adj.T)
-    g_eigs, g_vecs, g_vecs_inv = _col_norm_eigh(g_adj)
+    f_eigs, f_vecs, f_vecs_inv = col_norm_eigh(f_adj.T)
+    g_eigs, g_vecs, g_vecs_inv = col_norm_eigh(g_adj)
 
     R = decay * (f_eigs[:,np.newaxis] @ g_eigs[np.newaxis,:]) 
     A = f_vecs_inv @ sim_matrix @ g_vecs
 
     result = f_vecs @ (A / (1 - R)) @ g_vecs_inv
     return result.real
-
