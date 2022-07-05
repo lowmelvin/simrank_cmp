@@ -10,11 +10,11 @@ A = nx.adjacency_matrix(g).A
 # For the initial similarity matrix, we assume every node is only similar to itself
 sims = np.identity(len(g))
 
-# Propagate the similarities using SimRank, using self loops and a high decay factor for demo purposes
-S = compute_similarities(A, A, sims, add_self_loops=True, decay=0.9)
+# Propagate the similarities using SimRank, using self loops
+S = compute_similarities(A, A, sims, add_self_loops=True, decay=0.6)
 
 # We want to color the nodes based on the similarity between them
-# Because of the exponential decay factor, we take the log of the similarities for nicer colors only
+# Because of the exponential decay factor, we take the log of the similarities for better visualization
 intensities = np.log(S[len(g) // 2, :])
 intensities = (intensities - intensities.min()) / intensities.ptp()
 color_map = [plt.cm.Blues(intensity) for intensity in intensities]
