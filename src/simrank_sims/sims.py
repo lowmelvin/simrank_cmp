@@ -16,8 +16,8 @@ def compute_similarities(f_adj, g_adj, sim_matrix, add_self_loops=False, decay=0
         np.fill_diagonal(f_adj, 1)
         np.fill_diagonal(g_adj, 1)
     
-    f_adj_normed = _col_norm(f_adj)
-    g_adj_normed = _col_norm(g_adj).T
+    f_adj_normed = _col_norm(f_adj).T
+    g_adj_normed = _col_norm(g_adj)
 
     # matrices are no longer symmetric after column normalization!
     f_eigs, f_vecs = np.linalg.eig(f_adj_normed)
