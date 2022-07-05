@@ -8,7 +8,7 @@ For larger graphs and where 1) you don't need exact results, or 2) you don't nee
 
 ## Installation and Usage
 
-Install with `pip install simrank-cmp`.
+Install with `pip install simrank_cmp`.
 
 Usage is straightforward:
 
