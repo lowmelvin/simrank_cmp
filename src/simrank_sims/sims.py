@@ -3,7 +3,7 @@ import numpy as np
 def _col_norm(matrix):
     return matrix / matrix.sum(axis=0)
 
-def compute_similarities(f_adj, g_adj, sim_matrix, add_self_loops=False, decay=0.6):
+def compute_similarities(f_adj, g_adj, sim_matrix, add_self_loops=True, decay=0.6):
     """
     Compute the similarities between the nodes of two undirected graphs using vanilla SimRank.
     :param f_adj: The adjacency matrix of the first graph.
