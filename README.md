@@ -26,10 +26,8 @@ In `examples/similarity_propagation.py`, we visualize the propagation of similar
 
 ![propagation](https://github.com/rzqx/simrank_cmp/blob/master/assets/similarity_propagation.png)
 
-In `examples/match_robustness.py`, we show how the graph structure can help us match more nodes than just using the pairwise node similarities alone. In this example, only 10% of the nodes are labeled, but the algorithm is able to match 100% of the nodes when considering the graph structure. As edges are removed, accuracy drops as expected until we hit the baseline of 10%.
+In `examples/match_robustness.py`, we are trying to match nodes from two identical graphs. Only 10% of the nodes are labeled, resulting in a ~10% baseline if you were to match nodes at random. The rest of the other nodes are indistinguishable.
 
+By propagating the similarity information from the 10% across the two graphs, we are able to achieve a perfect 100% match of all nodes. We then slowly remove edges from one of the graphs and see that, as expected, accuracy drops until we hit the baseline.
 
-
-
-
-
+![robustness](https://github.com/rzqx/simrank_cmp/blob/master/assets/match_robustness.png)
