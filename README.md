@@ -2,9 +2,9 @@
 
 This is an implementation of SimRank for comparing small, undirected graphs. Notably, it can be used for augmenting pairwise similarities calculated using just the node labels alone, with structural similarity information from the edges.
 
-The algorithm used is exact and non-iterative, and is based on a matrix formulation of SimRank. The main complexity comes from calculating the full eigen-decomposition of the adjacency matrices and then doing matrix multiplication. As such, it is not meant to be used on graphs much larger than a few thousand nodes. A derivation can be found [here](https://github.com/rzqx/simrank_cmp/blob/master/assets/explain.pdf).
+The algorithm used is exact and non-iterative, and is based on a matrix formulation of SimRank. The main complexity comes from calculating the full eigendecomposition of the adjacency matrices and then doing matrix multiplication. As such, it is not meant to be used on graphs much larger than a few thousand nodes. A derivation can be found [here](https://github.com/rzqx/simrank_cmp/blob/master/assets/explain.pdf).
 
-For larger graphs and where 1) you don't need exact results, or 2) you don't need pairwise similarities, only similarities for specific node-pair s, there are alternative algorithms.
+For larger graphs and where 1) you don't need exact results, or 2) you don't need pairwise similarities, only similarities for specific node-pairs, there are alternative algorithms.
 
 ## Installation and Usage
 
