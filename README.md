@@ -24,10 +24,16 @@ updated_similarities = compute_similarities(f_adj, g_adj, initial_similarities, 
 
 In `examples/similarity_propagation.py`, we visualize the propagation of similarity information across the graph from a single node (the center one in this picture). Darker means more similar.
 
-![propagation-image](https://github.com/rzqx/simrank_cmp/blob/master/assets/similarity_propagation.png)
+![propagation-img](https://github.com/rzqx/simrank_cmp/blob/master/assets/similarity_propagation.png)
 
 In `examples/match_robustness.py`, we are trying to match nodes from two identical graphs. Only 10% of the nodes are labeled, resulting in a ~10% baseline if you were to match nodes at random. The rest of the other nodes are indistinguishable.
 
 By propagating the similarity information from the 10% across the two graphs, we are able to achieve a perfect 100% match of all nodes. We then slowly remove edges from one of the graphs and see that, as expected, accuracy drops until we hit the baseline.
 
-![robustness-image](https://github.com/rzqx/simrank_cmp/blob/master/assets/match_robustness.png)
+![robustness-img](https://github.com/rzqx/simrank_cmp/blob/master/assets/match_robustness.png)
+
+In `examples/symmetry.py`, we use the algorithm to detect symmetries in the graph. Nodes that have the same color can be swapped without affecting the structure of the graph. This can be useful, for example, during constrained optimization, where symmetry points to redundant solutions that can be pruned.
+
+![symmetry-img](https://github.com/rzqx/simrank_cmp/blob/master/assets/symmetry.png)
+
+
