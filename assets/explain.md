@@ -53,7 +53,7 @@ $$
 
 where $Q$ is symmetric because $D^{\frac{1}{2}}$ and $S$ are both symmetric. The above shows that $Q$ is similar to $SD$, and thus they share the same eigenvalues. Moreover, we can now apply the `np.linalg.eigh` routine to $Q$ because it is symmetric.
 
-Let $v$ be an eigenvector of $Q$ with eigenvalue $\lambda$. Then,
+To recover the original eigenvectors, let $v$ be an eigenvector of $Q$ with eigenvalue $\lambda$. Then,
 
 $$
 \begin{aligned}
@@ -63,7 +63,7 @@ Qv = D^{\frac{1}{2}}(SD)D^{-\frac{1}{2}}v &= \lambda v  \\
 \end{aligned}
 $$
 
-which shows that $w = D^{-\frac{1}{2}}v$ is an eigenvector of our column-normalized matrix $SD$ with eigenvalue $\lambda$ of $Q$.
+which shows that $w = D^{-\frac{1}{2}}v$ is an eigenvector of $SD$ with eigenvalue $\lambda$ of $Q$.
 
 Finally, we are interested in calculating the inverse eigenvectors of $SD$ ($P_F^{-1}$ and $P_G^{-1}$ from previous section). Let $B$ be the eigenvectors of $Q$. Because $Q$ is symmetric, $B$ is an orthogonal matrix.
 
