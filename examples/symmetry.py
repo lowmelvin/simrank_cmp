@@ -17,6 +17,7 @@ diag = np.round(np.log(diag), decimals = 5)
 
 # Associate each unique value on the diagonal with a color
 unique_values = np.unique(diag)
+np.random.shuffle(unique_values)
 colors = { u: plt.cm.jet(i / len(unique_values)) for i, u in enumerate(unique_values) }
 color_map = [colors[u] for u in diag]
 
